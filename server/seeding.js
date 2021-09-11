@@ -5,22 +5,23 @@ const books = require('./data/books')
 const users = require('./data/users')
 console.log('Seeding data .... ')
 server
-
+console.log(users)
 
 const seedingData = async () => { 
   
     try {
-        await User.deleteMany()
-        await Book.deleteMany()
+        // console.log('something here is working')
+       await User.deleteMany()
+       await Book.deleteMany()
     
-        await User.insertMany(users)
+       await User.insertMany(users)
+        
+       await Book.insertMany(users)
 
-        await Book.insertMany(books)
-
-        console.log('Data is seeded ! ')
-        process.exit()
-    }catch(error){
-
+        // console.log('Data is seeded ! ')
+        process.exit(1)
+    }catch(error)  {
+        console.log(error)
     }
 } 
 
@@ -30,7 +31,7 @@ const deleteAllData = async () => {
 
 
     console.log('Data is deleted ! ')
-    process.exit()
+    process.exit(1)
 } 
 
 if(process.argv[2] ==='seeding') {
