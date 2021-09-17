@@ -1,9 +1,12 @@
 import React from 'react'
-
+import Bookstore  from './Bookstore'
+import Card from '../Shared/Card'
+import Loading from '../Shared/Loading'
 const Home = () => {
     return (
         <div>
-            Home
+            <Card title=''/>
+            <Loading/>
         </div>
     )
 }

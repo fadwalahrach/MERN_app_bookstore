@@ -35,8 +35,8 @@ userSchema.methods.matchPassword = async function(enteredPassword) {
   };
   
 
-userSchema.methods.getJwtToken = () => {
-        return jwt.sign({id: this._id}, process.env.KEY_TOKEN,{
+userSchema.methods.getJwtToken = (id) => {
+        return jwt.sign({id: id}, process.env.KEY_TOKEN,{
         expiresIn: process.env.KEY_TOKEN_EXPIRE
     })
 }

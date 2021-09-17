@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux'
 const NavBar = () => {
     const loginUser = useSelector(state => state.userLogin)
     const {loading,error,userInfo} = loginUser
-
+    console.log('userInfo', userInfo)
     return (
         <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
             <Container>
@@ -17,6 +17,9 @@ const NavBar = () => {
                     <Nav className="ms-auto">
                             {userInfo ? (<p>Bienvenu Zakaria</p>) : 
                                <>
+                                     <LinkContainer to='/books'>
+                               <Nav.Link to='/books'>Books</Nav.Link>
+                           </LinkContainer>
                                <LinkContainer to='/cart'>
                                <Nav.Link to='/cart'>Cart</Nav.Link>
                            </LinkContainer>

@@ -1,0 +1,18 @@
+.card-container { 
+    border: 1px solid black;
+    display:flex;
+    flex-direction:column;
+    width:240px;
+    height:340px;
+    align-items: center;
+    text-align:center;
+ 
+}
+
+.card-container > button {
+    border:none;
+    color:white;
+    background-color: black;
+    height:50px
+    
+}
