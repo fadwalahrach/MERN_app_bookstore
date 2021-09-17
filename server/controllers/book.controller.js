@@ -11,6 +11,16 @@ const getAllBooks = asyncHandler(async(req,res,next) => {
     res.json({success: true, data: books})
 })
 
+const getBook = asyncHandler(async(req,res,next) => { 
+    const book = await Book.findById(req.params.id)
+
+    if(!book) {
+        res.json({success: true, message: 'didnt find book'})
+    }
+
+    res.json({success: true, data: book})
+})
+
 const createBooks = asyncHandler(async(req,res,next) => { 
 
     const book = await Book.findOne(req.body.title)
@@ -41,4 +51,4 @@ const createBooks = asyncHandler(async(req,res,next) => {
 })
 
 
-module.exports = {getAllBooks, createBooks}
+module.exports = {getAllBooks, createBooks,getBook}

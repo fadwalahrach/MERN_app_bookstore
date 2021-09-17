@@ -1,0 +1,6 @@
+.bookstore-container { 
+    display: flex;
+    justify-content: space-around;
+    height: 70vh;
+    align-items: center;
+}
